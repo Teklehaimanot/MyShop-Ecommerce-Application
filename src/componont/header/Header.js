@@ -1,6 +1,6 @@
 import { FaSearch } from 'react-icons/fa';
-import{FaShoppingCart} from 'react-icons/fa';
 import './Header.scss'
+import Cart from './cart/Cart';
 const Header = () => {
     return (
         <div className="header">
@@ -15,9 +15,8 @@ const Header = () => {
                 <span></span>
                 <a href="">LOGIN</a>
                 <span></span>
-                <a href="">CART(0) <i > <FaShoppingCart/> </i></a>
-
-              
+                <Cart/>
+                
             </div>
         </div>
     )
