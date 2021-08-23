@@ -1,0 +1,40 @@
+@import '../../../main.scss';
+.header-cart {
+    display: flex;
+    padding-right: 3rem;
+    justify-content: space-between;
+    position: relative;
+    right: 3rem;
+    a {
+        list-style: none;
+        text-decoration: none;
+        color: $color-light;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        margin-left: 1.5rem;
+        position: relative;
+        &:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 0.08rem;
+            left: 50%;
+            position: absolute;
+            background: #444;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+        }
+        &:hover:after {
+            width: 100%;
+            left: 0;
+        }
+    }
+    span {
+        width: .07rem;
+        height: 2rem;
+        background-color: #222;
+        text-align: center;
+        margin-left: 1.5rem;
+    }
+}
