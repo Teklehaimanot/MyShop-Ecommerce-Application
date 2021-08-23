@@ -1,5 +1,6 @@
 import { useState } from "react"
 import{FaShoppingCart} from 'react-icons/fa';
+import './Cart.scss'
 const Cart = () => {
     const [cart, setCart] = "0";
     return (

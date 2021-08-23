@@ -58,26 +58,4 @@
             color: #fff;
         }
     }
-    .header-cart {
-        display: flex;
-        padding-right: 3rem;
-        justify-content: space-between;
-        position: relative;
-        right: 3rem;
-        a {
-            list-style: none;
-            text-decoration: none;
-            color: $color-light;
-            text-transform: uppercase;
-            letter-spacing: 0.1rem;
-            margin-left: 1.5rem;
-        }
-        span {
-            width: .07rem;
-            height: 2rem;
-            background-color: #222;
-            text-align: center;
-            margin-left: 1.5rem;
-        }
-    }
 }
