@@ -11,9 +11,8 @@
     height: 6rem;
     overflow: auto;
     position: relative;
+    z-index: 2;
     ul {
-        // position: absolute;
-        // right: 3rem;
         a {
             margin-right: 3rem;
             list-style: none;

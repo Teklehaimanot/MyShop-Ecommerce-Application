@@ -4,7 +4,10 @@ import Header from './componont/header/Header';
 function App() {
   return (
     <div className="App">
-    <Header />
+      <Header />
+      <div className='main-banner'>
+        
+      </div>
     </div>
   );
 }

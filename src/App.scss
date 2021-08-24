@@ -17,3 +17,14 @@ body {
     line-height: 1.7rem;
     font-weight: 400;
 }
+
+.main-banner {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    background-color: #f1f1f1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-image: url(https://novine-react.envytheme.com/_next/static/media/main-banner1.ba2256865242c4e3512ada54c86803a0.jpg);
+}
