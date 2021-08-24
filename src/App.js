@@ -6,7 +6,98 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Banner/>
+      <Banner />
+      <div className='product-list'>
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+
+        <div className='single-product-box'>
+          <div className='product-img'></div>
+          <div className='product-content'>
+            <span>Women Almada t-shirt</span>
+            <p> $25 </p>
+            <button>ADD TO CART</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
