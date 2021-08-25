@@ -5,7 +5,7 @@ import Banner from './componont/banner/Banner'
 import Products from './componont/products/Products';
 function App() {
 
-  const [product, setProduct] = [
+  const [product, setProduct] = useState(
     [
       {
         id: 1,
@@ -57,7 +57,7 @@ function App() {
     
     ]
  
-  ]
+  )
 
   console.log('product',product)
   return (

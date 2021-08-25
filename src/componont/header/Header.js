@@ -1,7 +1,16 @@
 import { FaSearch } from 'react-icons/fa';
+import { useState } from 'react';
 import './Header.scss'
 import Cart from './cart/Cart';
 const Header = () => {
+    const [popupCart, setPopupCart] = useState(false);
+
+    const onToggle = ()=>{
+        setPopupCart(!popupCart)
+    }
+
+
+    console.log('tog', popupCart)
     return (
         <div className="header">
             <a className='header-logo' href="">Embish</a>
@@ -13,10 +22,10 @@ const Header = () => {
             <div className='header-cart'>
                 <FaSearch />
                 <span></span>
-                <a href="">LOGIN</a>
+                <a className='login' href="#">LOGIN</a>
                 <span></span>
-                <Cart/>
-                
+                <Cart  onToggle = {onToggle} popupCart = {popupCart}/>
+
             </div>
         </div>
     )
