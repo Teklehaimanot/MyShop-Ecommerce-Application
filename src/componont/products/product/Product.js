@@ -6,7 +6,7 @@ const Product = ({product}) => {
             }} ></div>
             <div className='product-content' >
                 <span>{product.text}</span>
-                <p> {product.price} </p>
+                <p> {`$${product.price}`} </p>
                 <button>ADD TO CART</button>
             </div>
         </div>

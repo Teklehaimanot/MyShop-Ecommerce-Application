@@ -19,6 +19,9 @@
             background-position: 50%;
             box-shadow: 0 0.5rem 0.5rem #888888;
             margin-bottom: 2rem;
+            &:hover {
+                transform: rotateY(180deg);
+            }
             // background-image: url(https://novine-react.envytheme.com/_next/static/images/1-6a494688ade5875c6bc3109e33af850d.jpg);
         }
         .product-content {
