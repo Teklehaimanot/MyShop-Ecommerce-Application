@@ -61,6 +61,13 @@
                 justify-content: space-between;
                 text-align: center;
                 padding: 2rem 1rem;
+                .gr-close {
+                    opacity: 0.5;
+                    &:hover {
+                        font-weight: bold;
+                        opacity: 1;
+                    }
+                }
             }
             .product-cart-contents {
                 display: flex;

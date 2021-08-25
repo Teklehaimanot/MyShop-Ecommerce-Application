@@ -3,7 +3,6 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { GrClose } from 'react-icons/gr'
 import './Cart.scss'
 const Cart = ({onToggle,popupCart }) => {
-    console.log('tog', onToggle)
     const [cart, setCart] = useState(0);
     return (
         <>
@@ -15,7 +14,7 @@ const Cart = ({onToggle,popupCart }) => {
                             <div className='cart-popup'>
                                 <div className='cart-popup-header'>
                                     <h4> MY CART ( {cart})</h4>
-                                    <GrClose onClick = { onToggle}/>
+                                    <GrClose className= 'gr-close ' onClick = { onToggle}/>
 
                                 </div>
                                 <div className='product-cart-contents' >

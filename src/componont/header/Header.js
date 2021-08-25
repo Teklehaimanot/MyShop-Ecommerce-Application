@@ -1,18 +1,35 @@
 import { FaSearch } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import './Header.scss'
 import Cart from './cart/Cart';
 const Header = () => {
     const [popupCart, setPopupCart] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-    const onToggle = ()=>{
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 200) {
+            setScrolled(true);
+        }
+        else {
+            setScrolled(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    })
+    let navbarClasses = ['header'];
+    if (scrolled) {
+        navbarClasses.push('scrolled');
+    }
+
+    const onToggle = () => {
         setPopupCart(!popupCart)
     }
 
-
-    console.log('tog', popupCart)
     return (
-        <div className="header">
+        <div className={navbarClasses.join(" ")}>
             <a className='header-logo' href="">Embish</a>
             <ul className='header-list'>
                 <a href="">HOME</a>
@@ -24,7 +41,7 @@ const Header = () => {
                 <span></span>
                 <a className='login' href="#">LOGIN</a>
                 <span></span>
-                <Cart  onToggle = {onToggle} popupCart = {popupCart}/>
+                <Cart onToggle={onToggle} popupCart={popupCart} />
 
             </div>
         </div>
