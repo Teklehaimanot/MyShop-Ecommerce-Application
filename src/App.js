@@ -59,7 +59,6 @@ function App() {
  
   )
 
-  console.log('product',product)
   return (
     <div className="App">
       <Header />
