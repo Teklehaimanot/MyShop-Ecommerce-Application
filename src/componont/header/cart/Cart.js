@@ -24,7 +24,7 @@ const Cart = ({ onToggle, popupCart }) => {
             {
                 title: 'Women Red t-shirt',
                 size: 'Red / XS',
-                qunatity: 1,
+                qunatity: 2,
                 price: 25,
                 id: 3,
                 img: "https://novine-react.envytheme.com/_next/static/images/5-da7b0bae10e707351e9c5bb0bed5219a.jpg"
