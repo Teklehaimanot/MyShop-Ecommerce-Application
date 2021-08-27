@@ -36,7 +36,6 @@ const Cart = ({ onToggle, popupCart }) => {
         let sum = 0;
         carts.forEach(cart => {
             sum = sum + (cart.qunatity *cart.price)
-
         });
         return sum;
     }
