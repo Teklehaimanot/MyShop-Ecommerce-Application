@@ -3,6 +3,7 @@ import './App.scss';
 import Header from './componont/header/Header';
 import Banner from './componont/banner/Banner'
 import Products from './componont/products/Products';
+import CartProvider from './context/CartProvider';
 function App() {
 
   const [product, setProduct] = useState(
@@ -12,13 +13,13 @@ function App() {
         text: 'Women Red t-shirt',
         price: 25,
         img: "https://novine-react.envytheme.com/_next/static/images/1-6a494688ade5875c6bc3109e33af850d.jpg"
-      }, 
+      },
       {
         id: 2,
         text: 'Women Red t-shirt',
         price: 25,
         img: "https://novine-react.envytheme.com/_next/static/images/2-51e72ba6042ca7918f4e4464c4063de9.jpg"
-      }, 
+      },
       {
         id: 3,
         text: 'Women Red t-shirt',
@@ -41,29 +42,32 @@ function App() {
         text: 'Men Blue shemiz',
         price: 25,
         img: "https://novine-react.envytheme.com/_next/static/images/6-0f68829bdac0b6b09082d3123db91998.jpg"
-      }, 
+      },
       {
         id: 7,
         text: 'Women Red t-shirt',
         price: 25,
         img: "https://novine-react.envytheme.com/_next/static/images/7-7a8079d613afbeca97b5bd055270bbbe.jpg"
-      }, 
+      },
       {
         id: 8,
         text: 'Women Red t-shirt',
         price: 25,
         img: "https://novine-react.envytheme.com/_next/static/images/img-hover5-defced696029bdb994d20fba72afb2f3.jpg"
       }
-    
+
     ]
- 
+
   )
 
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <Products products = {product}/>
+      <CartProvider>
+        <Header />
+        <Banner />
+        <Products products={product} />
+      </CartProvider>
+
     </div>
   );
 }
