@@ -1,17 +1,24 @@
 import { useContext } from "react"
-import CartProvider, { cartContext } from "../../../context/CartProvider"
+import { cartContext } from "../../../context/CartProvider"
 const Product = ({ product }) => {
     const { carts, setCarts } = useContext(cartContext)
 
     const addToCart = () => {
-        setCarts([...carts, {
-            title: product.text,
-            size: product.size,
-            qunatity: 1,
-            price: product.price,
-            id: product.id,
-            img: product.img
-        }])
+        const feachCart = carts.filter(cart => cart.id === product.id);
+        if (!feachCart.length) {
+            setCarts([...carts, {
+                title: product.text,
+                size: product.size,
+                qunatity: 1,
+                price: product.price,
+                id: product.id,
+                img: product.img
+            }])
+        }
+        else
+        setCarts(
+            carts.map(cart => cart.id === product.id ? { ...cart, qunatity: cart.qunatity+1 } : cart)
+        )
     }
     return (
         <div className='single-product-box'>
@@ -21,7 +28,10 @@ const Product = ({ product }) => {
             <div className='product-content' >
                 <span>{product.text}</span>
                 <p> {`$${product.price}`} </p>
-                <button onClick={addToCart}>ADD TO CART</button>
+                <button onClick={() => {
+                    addToCart();
+                    // alert('product is added to the cart')
+                }}>ADD TO CART</button>
             </div>
         </div>
     )
