@@ -1,5 +1,6 @@
 import { FaSearch } from 'react-icons/fa';
 import { useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './Header.scss'
 import Cart from './cart/Cart';
 const Header = () => {
@@ -32,7 +33,8 @@ const Header = () => {
         <div className={navbarClasses.join(" ")}>
             <a className='header-logo' href="">Embish</a>
             <ul className='header-list'>
-                <a href="">HOME</a>
+                {/* <link to = '/'>HOME</link> */}
+                <Link to="/">HOME</Link>
                 <a href="">AbOUT</a>
                 <a href="">CONTACT</a>
             </ul>

@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import './App.scss';
 import Header from './componont/header/Header';
-// import Banner from './componont/banner/Banner'
 import Home from './Pages/Home';
-// import Products from './componont/products/Products';
+import CartView from './Pages/CartView';
 import CartProvider from './context/CartProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 function App() {
@@ -14,7 +12,12 @@ function App() {
         <Switch>
           <CartProvider>
             <Header />
-            <Home />
+            <Route exact path='/'>
+              <Home />
+            </Route >
+            <Route exact path='/cart'>
+              <CartView />
+            </Route>
           </CartProvider>
         </Switch>
       </Router>
