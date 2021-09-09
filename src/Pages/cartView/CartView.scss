@@ -6,7 +6,6 @@
     width: 80%;
     margin: 5% 10%;
     color: #212529;
-    ;
     .cart-table-list {
         display: flex;
         flex-direction: column;
@@ -16,22 +15,130 @@
             display: flex;
             justify-content: space-between;
             text-align: start;
-            border-bottom: 0.001rem solid #888888;
-            ;
+            align-items: center;
+            border-bottom: 0.001rem solid hsl(0, 0%, 53%, 0.3);
             width: 100%;
             .cart-table-col {
                 display: flex;
                 margin: 1rem 0;
                 width: 100%;
                 .cart-table-col-img {
-                    height: 25vh;
+                    height: 20vh;
                     width: 50%;
-                    background-size: cover;
+                    background-size: contain;
                     background-position: 50%;
                     background-repeat: no-repeat;
                     background-color: #f1f1f1;
                     background-image: url("https://novine-react.envytheme.com/_next/static/images/2-51e72ba6042ca7918f4e4464c4063de9.jpg");
                 }
+                &.name {
+                    display: flex;
+                    flex-direction: column;
+                    ul {
+                        list-style: none;
+                        text-decoration: none;
+                        opacity: 0.8;
+                        li {
+                            margin-bottom: 1rem;
+                        }
+                        strong {
+                            font-weight: 450;
+                        }
+                    }
+                    a {
+                        list-style: none;
+                        text-decoration: none;
+                        color: hsl(210, 11%, 15%, 0.6);
+                        font-weight: 600;
+                        margin-bottom: 1.5rem;
+                        &:hover {
+                            color: #212529;
+                        }
+                    }
+                }
+                .quantity {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 50%;
+                    background-color: #f1f1f1;
+                    padding: 1rem;
+                    // .quantity-icon {
+                    //     opacity: 0.5;
+                    //     &:hover {
+                    //         opacity: 1;
+                    //     }
+                    // }
+                }
+                .total {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 50%;
+                    padding: 1rem;
+                }
+            }
+            .cart-table-item-bottom {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 2rem 0;
+                align-items: center;
+                a {
+                    list-style: none;
+                    text-decoration: none;
+                    color: #212529;
+                    border: 0.02rem solid #888888;
+                    padding: 0.8rem 2rem;
+                    &:hover {
+                        background-color: #222;
+                        color: #fff;
+                    }
+                }
+                span {
+                    margin-left: 0.5rem;
+                }
+            }
+        }
+    }
+    .cart-total {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        align-items: flex-start;
+        margin-top: 3rem;
+        width: 50%;
+        // border: 0.02rem solid #8888;
+        box-shadow: 0rem 0rem 0.5rem #888888;
+        border-radius: 0.5rem;
+        position: relative;
+        left: 25%;
+        padding: 2rem;
+        h3,
+        ul,
+        a {
+            margin: 1rem 0;
+        }
+        ul {
+            list-style: none;
+            text-decoration: none;
+            width: 100%;
+            li {
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem;
+                border: 0.001rem solid hsl(0, 0%, 53%, 0.3);
+            }
+        }
+        a {
+            list-style: none;
+            text-decoration: none;
+            color: #212529;
+            border: 0.02rem solid #888888;
+            padding: 0.8rem 2rem;
+            &:hover {
+                background-color: #222;
+                color: #fff;
             }
         }
     }
