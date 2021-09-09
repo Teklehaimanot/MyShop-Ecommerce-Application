@@ -1,7 +1,4 @@
 import { useState, createContext } from "react"
-// import Products from '../componont/products'
-import Cart from "../componont/header/cart/Cart"
-
 export const cartContext = createContext('default');
 const CartProvider = (porps) => {
     const [carts, setCarts] = useState([]);

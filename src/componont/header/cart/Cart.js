@@ -2,6 +2,7 @@ import { useContext } from "react"
 import {cartContext } from "../../../context/CartProvider";
 import { FaShoppingCart } from 'react-icons/fa';
 import { GrClose } from 'react-icons/gr'
+import { Link } from "react-router-dom";
 import './Cart.scss'
 const Cart = ({ onToggle, popupCart }) => {
     const {carts, setCarts} = useContext(cartContext)
@@ -60,7 +61,7 @@ const Cart = ({ onToggle, popupCart }) => {
 
                                 <div className='product-cart-checkout'>
                                     <a href="#"> PROCEED TO CHECKOUT</a>
-                                    <a href="#"> VIEW SHOPING CART</a>
+                                    <Link onClick = {onToggle} to='/cart'> VIEW SHOPING CART</Link>
                                 </div>
 
                             </div>
