@@ -1,5 +1,5 @@
-import Products from "../componont/products/Products"
-import Banner from "../componont/banner/Banner"
+import Products from "../../componont/products/Products"
+import Banner from "../../componont/banner/Banner"
 import { useState } from "react"
 const Home = () => {
     const [product, setProduct] = useState(
@@ -68,7 +68,7 @@ const Home = () => {
 
     return (
         <>
-             <Banner />
+            <Banner />
             <Products products={product} />
         </>
 

@@ -1,7 +1,7 @@
 import './App.scss';
 import Header from './componont/header/Header';
-import Home from './Pages/Home';
-import CartView from './Pages/CartView';
+import Home from './Pages/home/Home';
+import CartView from './Pages/cartView/CartView';
 import CartProvider from './context/CartProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 function App() {
@@ -9,17 +9,17 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <CartProvider>
-            <Header />
+        <CartProvider>
+          <Header />
+          <Switch>
             <Route exact path='/'>
               <Home />
             </Route >
             <Route exact path='/cart'>
               <CartView />
             </Route>
-          </CartProvider>
-        </Switch>
+          </Switch>
+        </CartProvider>
       </Router>
     </div>
   );

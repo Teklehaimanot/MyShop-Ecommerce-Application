@@ -33,7 +33,6 @@ const Header = () => {
         <div className={navbarClasses.join(" ")}>
             <a className='header-logo' href="">Embish</a>
             <ul className='header-list'>
-                {/* <link to = '/'>HOME</link> */}
                 <Link to="/">HOME</Link>
                 <a href="">AbOUT</a>
                 <a href="">CONTACT</a>
