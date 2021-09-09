@@ -36,7 +36,7 @@ const Cart = ({ onToggle, popupCart }) => {
                                                     </div>
                                                     <div className='product-cart-content'>
                                                         <p> {cart.title}</p>
-                                                        <span>{cart.size}</span>
+                                                        <span>{cart.size +" / "+ cart.color}</span>
                                                         <div className='product-price'>
                                                             <span>{cart.qunatity}</span>
                                                             <span>X</span>

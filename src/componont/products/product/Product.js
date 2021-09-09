@@ -9,6 +9,8 @@ const Product = ({ product }) => {
             setCarts([...carts, {
                 title: product.text,
                 size: product.size,
+                color:product.color,
+                material: product.material,
                 qunatity: 1,
                 price: product.price,
                 id: product.id,
