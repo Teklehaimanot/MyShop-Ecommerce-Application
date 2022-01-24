@@ -1,5 +1,5 @@
 import { FaSearch } from 'react-icons/fa';
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss'
 import Cart from './cart/Cart';
@@ -31,7 +31,7 @@ const Header = () => {
 
     return (
         <div className={navbarClasses.join(" ")}>
-            <a className='header-logo' href="">Embish</a>
+            <a className='header-logo' href="">My-Shop</a>
             <ul className='header-list'>
                 <Link to="/">HOME</Link>
                 <a href="">AbOUT</a>
