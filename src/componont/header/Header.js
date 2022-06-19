@@ -40,7 +40,7 @@ const Header = () => {
             <div className='header-cart'>
                 <FaSearch />
                 <span></span>
-                <a className='login' href="#">LOGIN</a>
+                <Link className='login' to="/login">LOGIN</Link>
                 <span></span>
                 <Cart onToggle={onToggle} popupCart={popupCart} />
 
