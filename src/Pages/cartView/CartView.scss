@@ -61,14 +61,13 @@
                     flex-direction: row;
                     justify-content: space-between;
                     width: 50%;
-                    background-color: #f1f1f1;
+                    align-items: center;
                     padding: 1rem;
-                    // .quantity-icon {
-                    //     opacity: 0.5;
-                    //     &:hover {
-                    //         opacity: 1;
-                    //     }
-                    // }
+                    button{
+                        border-radius: 20%;
+                        border: #888888 solid .1rem;
+                        padding: .2rem;
+                    }
                 }
                 .total {
                     display: flex;
@@ -108,7 +107,6 @@
         align-items: flex-start;
         margin-top: 3rem;
         width: 50%;
-        // border: 0.02rem solid #8888;
         box-shadow: 0rem 0rem 0.5rem #888888;
         border-radius: 0.5rem;
         position: relative;

@@ -1,13 +1,35 @@
-import { FaMinus } from 'react-icons/fa';
-import { FaPlus } from 'react-icons/fa';
-import { RiDeleteBin6Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
 import { cartContext } from '../../context/CartProvider';
 import { useContext } from 'react';
 import './CartView.scss'
+import Cartable from '../../componont/cartable/Cartable';
+import { useState } from 'react';
 const CartView = () => {
     const { carts, setCarts } = useContext(cartContext);
-    console.log('carts', carts)
+    const [checked, setChecked] = useState(false)
+    const [shippingValue, setShippingValue] = useState(6);
+    const shipping = checked ? shippingValue : 0
+
+    const addQuantity = (id) => {
+        setCarts(carts.map((cart) => {
+            return cart.id === id ? { ...cart, qunatity: cart.qunatity + 1 } : cart
+        }))
+    }
+    const minuQuantity = (id) => {
+        setCarts(carts.map((cart) => {
+            return cart.id === id ? { ...cart, qunatity: cart.qunatity - 1 } : cart
+        }))
+    }
+
+    const Subtotal = () => {
+        const total = carts.reduce((acc, curr) => {
+            return acc + curr.qunatity * curr.price
+        }, 0)
+        return total
+    }
+    const total = () => {
+        return shipping + Subtotal()
+    }
     return (
 
         <div className='cart-area'>
@@ -21,39 +43,9 @@ const CartView = () => {
                 </div>
 
                 {
-                    carts.length > 0 ? (
+                    carts ? (
                         carts.map((cart) => (
-                            <div className='cart-table-item '>
-                                <div className='cart-table-col cart-table-col-img'>
-                                    <div className='cart-table-col-img'></div>
-                                </div>
-                                <div className='cart-table-col name'>
-                                    <a href="#"> {cart.title}</a>
-                                    <ul>
-                                        <li>Color: <strong>{cart.color}</strong></li>
-                                        <li>Size: <strong>{cart.size}</strong></li>
-                                        <li>Material: <strong>{cart.material}</strong></li>
-                                    </ul>
-                                </div>
-                                <div className='cart-table-col'>
-                                    <span>${cart.price}</span>
-                                </div>
-                                <div className='cart-table-col'>
-                                    <div className='quantity'>
-                                        <span><FaMinus /></span>
-                                        <span>{cart.qunatity}</span>
-                                        <span><FaPlus /></span>
-                                    </div>
-
-                                </div>
-                                <div className='cart-table-col'>
-                                    <div className='total'>
-                                        <span>${cart.qunatity *cart.price}</span>
-                                        <a href="#"> <RiDeleteBin6Line /></a>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <Cartable key={cart.id} cart={cart} addQuantity={addQuantity} minuQuantity={minuQuantity} />
                         ))
 
                     ) : (<div className='cart-table-item' style={{ padding: '1rem 0' }}>Empty. </div>)
@@ -63,8 +55,8 @@ const CartView = () => {
                     <div className='cart-table-item-bottom'>
                         <Link to="/">CONTINUE SHOPING</Link>
                         <label htmlFor="">
-                            <input type="checkbox" />
-                            <span>Shipping(+6$)</span>
+                            <input type="checkbox" value={checked} onChange={(e) => setChecked(e.target.checked)} />
+                            <span>Shipping({shippingValue})</span>
                         </label>
                     </div>
 
@@ -74,9 +66,9 @@ const CartView = () => {
             <div className='cart-total'>
                 <h3>Cart Total</h3>
                 <ul>
-                    <li>Subtotal: <span>$1040</span></li>
-                    <li>Shipping: <span>$6</span></li>
-                    <li>Total: <span>$1046</span></li>
+                    <li>Subtotal: <span>${Subtotal()}</span></li>
+                    <li>Shipping: <span>${shipping}</span></li>
+                    <li>Total: <span>${total()}</span></li>
                 </ul>
                 <a href="#">PROCEED TO CHECKOUT</a>
 
