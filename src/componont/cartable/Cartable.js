@@ -2,6 +2,7 @@ import React from 'react'
 import { FaMinus } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import { RiDeleteBin6Line } from 'react-icons/ri'
+import { IconContext } from "react-icons";
 
 const Cartable = ({ cart, addQuantity, minuQuantity }) => {
     return (
@@ -29,10 +30,15 @@ const Cartable = ({ cart, addQuantity, minuQuantity }) => {
 
             </div>
             <div className='cart-table-col'>
-                <div className='total'>
-                    <span>${cart.qunatity * cart.price}</span>
-                    <a href="#"> <RiDeleteBin6Line /></a>
-                </div>
+                <IconContext.Provider value={{ color: "red", size: '1.5rem', className: "global-class-name" }}>
+                    <div className='total'>
+                        <span>${cart.qunatity * cart.price}</span>
+                        <RiDeleteBin6Line
+                            onMouseOver={({ target }) => target.style.color = "blue"}
+                            onMouseOut={({ target }) => target.style.color = "red"}
+                        />
+                    </div>
+                </IconContext.Provider>
             </div>
         </div>
     )
