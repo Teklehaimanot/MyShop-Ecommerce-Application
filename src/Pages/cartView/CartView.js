@@ -21,6 +21,10 @@ const CartView = () => {
         }))
     }
 
+    const deleteItem = (id) => {
+        setCarts(carts.filter((cart) => cart.id !== id))
+    }
+
     const Subtotal = () => {
         const total = carts.reduce((acc, curr) => {
             return acc + curr.qunatity * curr.price
@@ -45,7 +49,7 @@ const CartView = () => {
                 {
                     carts ? (
                         carts.map((cart) => (
-                            <Cartable key={cart.id} cart={cart} addQuantity={addQuantity} minuQuantity={minuQuantity} />
+                            <Cartable key={cart.id} cart={cart} addQuantity={addQuantity} minuQuantity={minuQuantity} deleteItem={deleteItem} />
                         ))
 
                     ) : (<div className='cart-table-item' style={{ padding: '1rem 0' }}>Empty. </div>)
