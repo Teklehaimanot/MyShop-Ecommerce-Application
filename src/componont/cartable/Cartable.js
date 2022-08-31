@@ -8,7 +8,9 @@ const Cartable = ({ cart, addQuantity, minuQuantity, deleteItem }) => {
     return (
         <div className='cart-table-item '>
             <div className='cart-table-col cart-table-col-img'>
-                <div className='cart-table-col-img'></div>
+                <div className='cart-table-col-img' style={{
+                    backgroundImage: `url(${cart.img})`
+                }}></div>
             </div>
             <div className='cart-table-col name'>
                 <a > {cart.title}</a>
