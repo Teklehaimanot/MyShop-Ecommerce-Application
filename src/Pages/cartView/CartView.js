@@ -74,7 +74,7 @@ const CartView = () => {
                     <li>Shipping: <span>${shipping}</span></li>
                     <li>Total: <span>${total()}</span></li>
                 </ul>
-                <a href="#">PROCEED TO CHECKOUT</a>
+                <Link to="/checkout">PROCEED TO CHECKOUT</Link>
 
             </div>
         </div>

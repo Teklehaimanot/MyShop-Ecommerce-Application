@@ -29,6 +29,10 @@
                     background-position: 50%;
                     background-repeat: no-repeat;
                     background-color: #f1f1f1;
+                    box-shadow: 0 0.05rem 0.05rem #888888;
+                    &:hover {
+                        transform: rotateY(180deg);
+                    }
                 }
                 &.name {
                     display: flex;

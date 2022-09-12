@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { cartContext } from "../../../context/CartProvider"
+import { ToastContainer, toast } from 'react-toast'
 const Product = ({ product }) => {
     const { carts, setCarts } = useContext(cartContext)
 
@@ -9,7 +10,7 @@ const Product = ({ product }) => {
             setCarts([...carts, {
                 title: product.text,
                 size: product.size,
-                color:product.color,
+                color: product.color,
                 material: product.material,
                 qunatity: 1,
                 price: product.price,
@@ -18,10 +19,16 @@ const Product = ({ product }) => {
             }])
         }
         else
-        setCarts(
-            carts.map(cart => cart.id === product.id ? { ...cart, qunatity: cart.qunatity+1 } : cart)
-        )
+            setCarts(
+                carts.map(cart => cart.id === product.id ? { ...cart, qunatity: cart.qunatity + 1 } : cart)
+            )
     }
+
+    const wave = () => toast.success('Added to the cart', {
+        backgroundColor: '#4fa83c',
+        color: '#ffffff',
+    })
+
     return (
         <div className='single-product-box'>
             <div className='product-img' style={{
@@ -32,8 +39,9 @@ const Product = ({ product }) => {
                 <p> {`$${product.price}`} </p>
                 <button onClick={() => {
                     addToCart();
-                    // alert('product is added to the cart')
+                    wave()
                 }}>ADD TO CART</button>
+                <ToastContainer delay={2000} />
             </div>
         </div>
     )

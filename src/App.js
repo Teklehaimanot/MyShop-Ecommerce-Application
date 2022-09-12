@@ -5,6 +5,7 @@ import CartView from './Pages/cartView/CartView';
 import CartProvider from './context/CartProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from './Pages/login/Login';
+import Checkout from './Pages/checkout/Checkout';
 function App() {
 
   return (
@@ -18,6 +19,9 @@ function App() {
             </Route >
             <Route exact path='/cart'>
               <CartView />
+            </Route>
+            <Route exact path='/checkout'>
+              <Checkout />
             </Route>
             <Route exact path='/login'>
               <Login />
