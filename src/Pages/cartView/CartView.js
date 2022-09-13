@@ -36,7 +36,6 @@ const CartView = () => {
 
     const handleChecked = (e) => {
         setChecked(e.target.checked)
-        // console.log(checked)
         checked ? setShippingValue(0) : setShippingValue(shipping)
     }
     return (
@@ -76,7 +75,7 @@ const CartView = () => {
                 <h3>Cart Total</h3>
                 <ul>
                     <li>Subtotal <span>${Subtotal()}</span></li>
-                    <li>Shipping <span>${shipping}</span></li>
+                    <li>Shipping <span>${shippingValue}</span></li>
                     <li>Total <span>${total()}</span></li>
                 </ul>
                 <Link to="/checkout">PROCEED TO CHECKOUT</Link>

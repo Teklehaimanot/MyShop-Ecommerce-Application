@@ -32,11 +32,11 @@ const Header = () => {
     return (
         <div className={navbarClasses.join(" ")}>
             <Link className='header-logo' to="/">ገበያ</Link>
-            <ul className='header-list'>
+            {/* <ul className='header-list'>
                 <Link to="/">HOME</Link>
                 <a href="">AbOUT</a>
                 <a href="">CONTACT</a>
-            </ul>
+            </ul> */}
             <div className='header-cart'>
                 <FaSearch />
                 <span></span>
