@@ -1,19 +1,93 @@
 import React from 'react'
-import { ToastContainer, toast } from 'react-toast'
+import './Checkout.scss'
 
 const Checkout = () => {
 
-    const wave = () => toast.success('Added to the cart', {
-        backgroundColor: '#4fa83c',
-        color: '#ffffff',
-    })
-
-
     return (
-        <div style={{ textAlign: 'center', margin: '10px' }}>
-            <button onClick={wave} style={{ padding: '10px' }}>pay</button>
-            <ToastContainer delay={3000} position="bottom-left" />
-        </div>
+        <form>
+            <div className='checkout-main'>
+                <div className='billing-details'>
+                    <h3>Billing Details</h3>
+                    <div className='form-group'>
+                        <label>Country <span class="required">*</span></label>
+                        <select className='form-control' name="country">
+                            <option value="6">Ethiopia</option>
+                            <option value="5">United Arab Emirates</option>
+                            <option value="1">China</option>
+                            <option value="2">United Kingdom</option>
+                            <option value="0">Germany</option>
+                            <option value="3">France</option>
+                            <option value="4">Japan</option>
+                        </select>
+                    </div>
+                    <div className='full-name'>
+                        <div className='form-group first-name'>
+                            <label>First Name <span class="required">*</span></label>
+                            <input type='text' />
+                        </div>
+                        <div className='form-group last-name'>
+                            <label>Last Name <span class="required">*</span></label>
+                            <input type='text' />
+                        </div>
+                    </div>
+                    <div className='form-group'>
+                        <label>Address <span class="required">*</span></label>
+                        <input type='text' />
+                    </div>
+                    <div className='form-group'>
+                        <label>Town/City <span class="required">*</span></label>
+                        <input type='text' />
+                    </div>
+
+                    <div className='full-name'>
+                        <div className='form-group first-name'>
+                            <label>Email <span class="required">*</span></label>
+                            <input type='email' />
+                        </div>
+                        <div className='form-group last-name'>
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type='text' />
+                        </div>
+                    </div>
+                </div>
+                <div className='order-details'>
+                    <h3>Your Order</h3>
+                    <table>
+                        <tr>
+                            <th>PRODUCT NAME</th>
+                            <th>TOTAL</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>$200</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>$300</td>
+                        </tr>
+                        <tr>
+                            <td>Ernst Handel</td>
+                            <td>$100</td>
+                        </tr>
+
+                        <tr>
+                            <td>Cart Subtotal</td>
+                            <td>$600</td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>$6</td>
+                        </tr>
+                        <tr>
+                            <td>Order Total</td>
+                            <td>$606</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </form>
+
     )
 }
 

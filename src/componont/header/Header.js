@@ -31,7 +31,7 @@ const Header = () => {
 
     return (
         <div className={navbarClasses.join(" ")}>
-            <a className='header-logo' href="">My-Shop</a>
+            <Link className='header-logo' to="/">ገበያ</Link>
             <ul className='header-list'>
                 <Link to="/">HOME</Link>
                 <a href="">AbOUT</a>

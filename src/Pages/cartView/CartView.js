@@ -70,9 +70,9 @@ const CartView = () => {
             <div className='cart-total'>
                 <h3>Cart Total</h3>
                 <ul>
-                    <li>Subtotal: <span>${Subtotal()}</span></li>
-                    <li>Shipping: <span>${shipping}</span></li>
-                    <li>Total: <span>${total()}</span></li>
+                    <li>Subtotal <span>${Subtotal()}</span></li>
+                    <li>Shipping <span>${shipping}</span></li>
+                    <li>Total <span>${total()}</span></li>
                 </ul>
                 <Link to="/checkout">PROCEED TO CHECKOUT</Link>
 
