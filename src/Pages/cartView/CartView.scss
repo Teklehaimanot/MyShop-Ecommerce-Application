@@ -16,7 +16,7 @@
             justify-content: space-between;
             text-align: start;
             align-items: center;
-            border-bottom: 0.001rem solid hsl(0, 0%, 53%, 0.3);
+            border-bottom: .08rem solid #eaedff;
             width: 100%;
             .cart-table-col {
                 display: flex;
@@ -92,7 +92,7 @@
                     border: 0.02rem solid #888888;
                     padding: 0.8rem 2rem;
                     &:hover {
-                        background-color: #222;
+                        background-color: #444;
                         color: #fff;
                     }
                 }
@@ -127,8 +127,8 @@
             li {
                 display: flex;
                 justify-content: space-between;
-                padding: 1rem;
-                border: 0.001rem solid hsl(0, 0%, 53%, 0.3);
+                padding: 1.5rem;
+                border: .08rem solid #eaedff;
             }
         }
         a {

@@ -6,6 +6,7 @@ import CartProvider from './context/CartProvider';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Login from './Pages/login/Login';
 import Checkout from './Pages/checkout/Checkout';
+import Footer from './componont/footer/Footer';
 function App() {
 
   return (
@@ -27,6 +28,7 @@ function App() {
               <Login />
             </Route>
           </Switch>
+          <Footer />
         </CartProvider>
       </Router>
     </div>
