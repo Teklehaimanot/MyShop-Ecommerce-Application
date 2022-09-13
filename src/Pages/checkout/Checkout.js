@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { cartContext } from '../../context/CartProvider'
 import './Checkout.scss'
 
 const Checkout = () => {
+    const { carts, shippingValue } = useContext(cartContext)
 
+    const Subtotal = () => {
+        const total = carts.reduce((acc, curr) => {
+            return acc + curr.qunatity * curr.price
+        }, 0)
+        return total
+    }
+
+    const total = () => {
+        return shippingValue + Subtotal()
+    }
     return (
         <form>
             <div className='checkout-main'>
@@ -41,11 +53,11 @@ const Checkout = () => {
 
                     <div className='full-name'>
                         <div className='form-group first-name'>
-                            <label>Email <span class="required">*</span></label>
+                            <label>Email <span >*</span></label>
                             <input type='email' />
                         </div>
                         <div className='form-group last-name'>
-                            <label>Phone Number <span class="required">*</span></label>
+                            <label>Phone Number <span>*</span></label>
                             <input type='text' />
                         </div>
                     </div>
@@ -57,30 +69,26 @@ const Checkout = () => {
                             <th>PRODUCT NAME</th>
                             <th>TOTAL</th>
                         </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>$200</td>
-                        </tr>
-                        <tr>
-                            <td>Centro comercial Moctezuma</td>
-                            <td>$300</td>
-                        </tr>
-                        <tr>
-                            <td>Ernst Handel</td>
-                            <td>$100</td>
-                        </tr>
+                        {
+                            carts?.map((cart) => (
+                                <tr key={cart.id}>
+                                    <td>{cart.title}</td>
+                                    <td>${cart.price * cart.qunatity}</td>
+                                </tr>
+                            ))
+                        }
 
                         <tr>
                             <td>Cart Subtotal</td>
-                            <td>$600</td>
+                            <td>${Subtotal()}</td>
                         </tr>
                         <tr>
                             <td>Shipping</td>
-                            <td>$6</td>
+                            <td>${shippingValue}</td>
                         </tr>
                         <tr>
                             <td>Order Total</td>
-                            <td>$606</td>
+                            <td>${total()}</td>
                         </tr>
 
                     </table>

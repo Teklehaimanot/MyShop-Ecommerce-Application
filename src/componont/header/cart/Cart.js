@@ -1,15 +1,15 @@
 import { useContext } from "react"
-import {cartContext } from "../../../context/CartProvider";
+import { cartContext } from "../../../context/CartProvider";
 import { FaShoppingCart } from 'react-icons/fa';
 import { GrClose } from 'react-icons/gr'
 import { Link } from "react-router-dom";
 import './Cart.scss'
 const Cart = ({ onToggle, popupCart }) => {
-    const {carts, setCarts} = useContext(cartContext)
+    const { carts, setCarts } = useContext(cartContext)
     const subTotal = () => {
         let sum = 0;
         carts.forEach(cart => {
-            sum = sum + (cart.qunatity *cart.price)
+            sum = sum + (cart.qunatity * cart.price)
         });
         return sum;
     }
@@ -36,7 +36,7 @@ const Cart = ({ onToggle, popupCart }) => {
                                                     </div>
                                                     <div className='product-cart-content'>
                                                         <p> {cart.title}</p>
-                                                        <span>{cart.size +" / "+ cart.color}</span>
+                                                        <span>{cart.size + " / " + cart.color}</span>
                                                         <div className='product-price'>
                                                             <span>{cart.qunatity}</span>
                                                             <span>X</span>
@@ -60,8 +60,8 @@ const Cart = ({ onToggle, popupCart }) => {
                                 </div>
 
                                 <div className='product-cart-checkout'>
-                                    <a href="#"> PROCEED TO CHECKOUT</a>
-                                    <Link onClick = {onToggle} to='/cart'> VIEW SHOPING CART</Link>
+                                    <Link onClick={onToggle} to="/checkout"> PROCEED TO CHECKOUT</Link>
+                                    <Link onClick={onToggle} to='/cart'> VIEW SHOPING CART</Link>
                                 </div>
 
                             </div>
