@@ -84,6 +84,8 @@ const Checkout = () => {
                         </tr>
 
                     </table>
+                    <hr />
+                    <input type='submit' value='PLACE ORDER' />
                 </div>
             </div>
         </form>

@@ -48,6 +48,7 @@
         table{
             width: 100%;
             margin-top: 3rem;
+            margin-bottom: 4rem;
             border-collapse: collapse;
 
             td, th {
@@ -55,6 +56,20 @@
                 text-align: left;
                 padding: 1.5rem;
               }
+        }
+        hr{
+            border: .08rem solid #eaedff;
+        }
+        input{
+            padding: 1.2rem;
+            margin-top: 4rem;
+            background-color: #444;
+            color: #fff;           
+            border: 0.02rem solid #888888;
+            &:hover {
+                color: #212529;;
+                background-color: #fff;
+            }
         }
     }
 
