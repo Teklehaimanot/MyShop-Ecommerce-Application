@@ -6,7 +6,7 @@ import Cartable from '../../componont/cartable/Cartable';
 import { useState } from 'react';
 const CartView = () => {
     const { carts, setCarts, shippingValue, setShippingValue } = useContext(cartContext);
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState(shippingValue)
     const shipping = 6
 
     const addQuantity = (id) => {
@@ -63,7 +63,7 @@ const CartView = () => {
                     <div className='cart-table-item-bottom'>
                         <Link to="/">CONTINUE SHOPING</Link>
                         <label htmlFor="">
-                            <input type="checkbox" value={checked} onChange={handleChecked} />
+                            <input type="checkbox" checked={checked} onChange={handleChecked} />
                             <span>Shipping({shipping})</span>
                         </label>
                     </div>
