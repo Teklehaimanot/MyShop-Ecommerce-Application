@@ -6,7 +6,7 @@ import './Checkout.scss'
 const Checkout = () => {
     const { carts, shippingValue } = useContext(cartContext)
     const [showPaymentCard, setShowPaymentCard] = useState(false)
-    const [error, setErro] = useState('')
+    const [error, setError] = useState('')
     const [billingForm, setBillingForm] = useState({
         country: '',
         firstName: '',
@@ -34,7 +34,7 @@ const Checkout = () => {
         if (country && firstName && lastName && address && city && email && phoneNumber) {
             setShowPaymentCard(true)
         } else (
-            setErro('Please fill all the required fileds')
+            setError('Please fill all the required fileds')
         )
 
     }

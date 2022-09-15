@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className='item-gebeya'>
                     <h3>ገበያ</h3>
                     <p>
-                        ገበያ ( Gebeya ) is an ecommerce platform that buys and sells clothing. There are also online payment integrations in the application. I built it solely for demonstration purposes. However, if anyone is interested in developing such and similar applications, please do not hesitate to contact me.
+                        (Gebeya) is an online marketplace that sells coloths. Due to payment integration support, the application can accept Card payments. and it was created solely for demonstration purposes; however, if you are interested in developing such or similar applications, please get in touch with me.
                     </p>
                 </div>
                 <div className='item-group'>
