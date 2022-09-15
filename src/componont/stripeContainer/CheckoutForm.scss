@@ -1,0 +1,35 @@
+.checkout-form{
+
+    // border: .05rem solid #666666;
+    box-shadow: 0rem 0rem 0.5rem #888888;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 15%  auto;
+    width: 40%;
+    background-color: #f5f5f5;  
+
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+
+        button{
+            margin-top: 3rem;
+            padding: .5rem;
+            border: none;
+            box-shadow: 0rem 0rem 0.5rem #888888;
+            background-color: #f5f5f5 ;
+            &:hover{
+                background-color: #444;
+                color: #f5f5f5;
+                cursor: pointer;
+            }
+          
+        }
+    }
+
+    div{
+        padding: 3rem;
+    
+    }
+}
