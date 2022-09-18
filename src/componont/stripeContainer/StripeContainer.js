@@ -3,13 +3,18 @@ import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import CheckoutForm from './CheckoutForm';
 
-const stripePromise = loadStripe('pk_test_51LhqlYCSGPUK5wDE3FJig8mnKl2VvS2mUJuJkDL9F1OfwJ7ws7jMDOYA6GVDoskWEZPzFkGi51ByxHoMQ2KaMS0w00Op8wDeyv');
 
-const StripeContainer = () => {
+const public_key = process.env.REACT_APP_LOAD_STRIPE
+
+console.log(public_key)
+
+const stripePromise = loadStripe(`${public_key}`);
+
+const StripeContainer = ({ amount }) => {
 
     return (
         <Elements stripe={stripePromise}>
-            <CheckoutForm />
+            <CheckoutForm amount={amount} />
         </Elements>
     )
 }

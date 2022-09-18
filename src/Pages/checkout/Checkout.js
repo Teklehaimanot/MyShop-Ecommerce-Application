@@ -8,7 +8,7 @@ const Checkout = () => {
     const [showPaymentCard, setShowPaymentCard] = useState(false)
     const [error, setError] = useState('')
     const [billingForm, setBillingForm] = useState({
-        country: '',
+        country: 'Ethiopia',
         firstName: '',
         lastName: '',
         address: '',
@@ -31,11 +31,16 @@ const Checkout = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         const { country, firstName, lastName, address, city, email, phoneNumber } = billingForm
-        if (country && firstName && lastName && address && city && email && phoneNumber) {
-            setShowPaymentCard(true)
-        } else (
-            setError('Please fill all the required fileds')
-        )
+        if (Subtotal()) {
+            if (country && firstName && lastName && address && city && email && phoneNumber) {
+                setShowPaymentCard(true)
+            } else (
+                setError('Please fill out all required fields')
+            )
+        } else {
+            setError('there is 0 item on your cart')
+        }
+
 
     }
 
@@ -55,7 +60,7 @@ const Checkout = () => {
                         <div className='billing-details'>
                             <h3>Billing Details</h3>
                             <div className='form-group'>
-                                <label>Country <span class="required">*</span></label>
+                                <label>Country <span>*</span></label>
                                 <select className='form-control' name="country" value={country} onChange={handleChange}>
                                     <option value="6">Ethiopia</option>
                                     <option value="5">United Arab Emirates</option>
@@ -68,20 +73,20 @@ const Checkout = () => {
                             </div>
                             <div className='full-name'>
                                 <div className='form-group first-name'>
-                                    <label>First Name <span class="required">*</span></label>
+                                    <label>First Name <span>*</span></label>
                                     <input type='text' name='firstName' value={firstName} onChange={handleChange} />
                                 </div>
                                 <div className='form-group last-name'>
-                                    <label>Last Name <span class="required">*</span></label>
+                                    <label>Last Name <span>*</span></label>
                                     <input type='text' name='lastName' value={lastName} onChange={handleChange} />
                                 </div>
                             </div>
                             <div className='form-group'>
-                                <label>Address <span class="required">*</span></label>
+                                <label>Address <span>*</span></label>
                                 <input type='text' name='address' value={address} onChange={handleChange} />
                             </div>
                             <div className='form-group'>
-                                <label>Town/City <span class="required">*</span></label>
+                                <label>Town/City <span>*</span></label>
                                 <input type='text' name='city' value={city} onChange={handleChange} />
                             </div>
 
@@ -131,7 +136,7 @@ const Checkout = () => {
                             <span style={{ color: 'red', paddingTop: '3rem' }}>{error}</span>
                         </div>
                     </div>
-                </form> : <StripeContainer />
+                </form> : <StripeContainer amount={total()} />
             }
 
         </>

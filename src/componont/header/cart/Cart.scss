@@ -87,7 +87,6 @@
                         position: relative;
                         background-size: contain;
                         background-repeat: no-repeat;
-                        // background-position: 50%;
                     }
                     .product-cart-content {
                         flex: 2;
@@ -132,6 +131,25 @@
                         &:hover {
                             background-color: #222;
                             color: #fff;
+                        }
+                        &:after {
+                            transition: none;
+                        }
+                    }
+                }
+                .cart-checkout{
+                    margin: 1rem 1rem;
+                    border: #444 solid 0.08rem;
+                    padding: 1rem 0;
+                    text-decoration: none;
+                    list-style: none;
+                    color: #fff;
+                    background-color: #222;
+
+                    &:hover {
+                        &:hover {
+                            background-color: #fff;
+                            color: #222;
                         }
                         &:after {
                             transition: none;

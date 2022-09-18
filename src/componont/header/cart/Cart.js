@@ -60,7 +60,7 @@ const Cart = ({ onToggle, popupCart }) => {
                                 </div>
 
                                 <div className='product-cart-checkout'>
-                                    <Link onClick={onToggle} to="/checkout"> PROCEED TO CHECKOUT</Link>
+                                    <Link className="cart-checkout" onClick={onToggle} to="/checkout"> PROCEED TO CHECKOUT</Link>
                                     <Link onClick={onToggle} to='/cart'> VIEW SHOPING CART</Link>
                                 </div>
 

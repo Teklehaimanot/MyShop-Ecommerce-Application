@@ -34,12 +34,23 @@
                 color: #222;
             }
             button {
-                background-color: #fff;
-                padding: 1rem;
-                &:hover {
-                    background-color: #222;
-                    color: #fff;
-                }
+
+        
+                    margin: 1rem 1rem;
+                    border: #444 solid 0.08rem;
+                    padding: 1rem 0;
+                    text-decoration: none;
+                    list-style: none;
+                    color: #222;
+                    &:hover {
+                        &:hover {
+                            background-color: #222;
+                            color: #fff;
+                        }
+                        &:after {
+                            transition: none;
+                        }
+                    }
             }
         }
     }
