@@ -32,7 +32,6 @@ const CheckoutForm = ({ amount }) => {
         if (!error) {
             try {
                 const { id } = paymentMethod
-                console.log(id)
                 const response = await axios.post(`${BASE_URL}/payment`, {
                     amount: amount,
                     id
