@@ -8,8 +8,6 @@ const public_key = process.env.REACT_APP_LOAD_STRIPE
 const stripePromise = loadStripe(public_key);
 
 
-console.log(public_key)
-
 const StripeContainer = ({ amount }) => {
 
     return (

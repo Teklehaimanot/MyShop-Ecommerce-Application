@@ -104,32 +104,33 @@ const Checkout = () => {
                         <div className='order-details'>
                             <h3>Your Order</h3>
                             <table>
-                                <tr>
-                                    <th>PRODUCT NAME</th>
-                                    <th>TOTAL</th>
-                                </tr>
-                                {
-                                    carts?.map((cart) => (
-                                        <tr key={cart.id}>
-                                            <td>{cart.title}</td>
-                                            <td>${cart.price * cart.qunatity}</td>
-                                        </tr>
-                                    ))
-                                }
+                                <tbody>
+                                    <tr>
+                                        <th>PRODUCT NAME</th>
+                                        <th>TOTAL</th>
+                                    </tr>
+                                    {
+                                        carts?.map((cart) => (
+                                            <tr key={cart.id}>
+                                                <td>{cart.title}</td>
+                                                <td>${cart.price * cart.qunatity}</td>
+                                            </tr>
+                                        ))
+                                    }
 
-                                <tr>
-                                    <td>Cart Subtotal</td>
-                                    <td>${Subtotal()}</td>
-                                </tr>
-                                <tr>
-                                    <td>Shipping</td>
-                                    <td>${shippingValue}</td>
-                                </tr>
-                                <tr>
-                                    <td>Order Total</td>
-                                    <td>${total()}</td>
-                                </tr>
-
+                                    <tr>
+                                        <td>Cart Subtotal</td>
+                                        <td>${Subtotal()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping</td>
+                                        <td>${shippingValue}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Order Total</td>
+                                        <td>${total()}</td>
+                                    </tr>
+                                </tbody>
                             </table>
                             <hr />
                             <input type='submit' value='PLACE ORDER' />
