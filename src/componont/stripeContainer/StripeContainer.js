@@ -4,8 +4,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import CheckoutForm from './CheckoutForm';
 
 
-const public_key = process.env.REACT_APP_LOAD_STRIPE
-const stripePromise = loadStripe(public_key);
+const stripePromise = loadStripe(process.env.REACT_APP_LOAD_STRIPE);
 
 
 const StripeContainer = ({ amount }) => {
