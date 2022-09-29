@@ -29,6 +29,7 @@ const CheckoutForm = ({ amount }) => {
             type: 'card',
             card: elements.getElement(CardElement),
         });
+        console.log(BASE_URL)
         if (!error) {
             try {
                 const { id } = paymentMethod
