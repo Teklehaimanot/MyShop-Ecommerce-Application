@@ -29,11 +29,12 @@ const CheckoutForm = ({ amount }) => {
             type: 'card',
             card: elements.getElement(CardElement),
         });
-        console.log(BASE_URL)
+        const url = `${BASE_URL}/payment`
+        console.log(url)
         if (!error) {
             try {
                 const { id } = paymentMethod
-                const response = await axios.post(`${BASE_URL}/payment`, {
+                const response = await axios.post(url, {
                     amount: amount,
                     id
                 })
