@@ -16,7 +16,7 @@ const CheckoutForm = ({ amount }) => {
     const stripe = useStripe();
     const elements = useElements();
     const { setCarts } = useContext(cartContext);
-
+    const url = `${BASE_URL}/payment`
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -29,8 +29,7 @@ const CheckoutForm = ({ amount }) => {
             type: 'card',
             card: elements.getElement(CardElement),
         });
-        const url = `${BASE_URL}/payment`
-        console.log(url)
+
         if (!error) {
             try {
                 const { id } = paymentMethod
