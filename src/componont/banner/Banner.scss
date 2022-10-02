@@ -20,8 +20,21 @@
         p,
         h1 {
             margin-bottom: 1.5rem;
+            line-height: normal;
             color: #222;
             text-transform: uppercase;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .main-banner{
+        background-image: none;
+        height: 40vh;
+
+        .main-banner-content {
+            text-align: center;
+            top:30%;
         }
     }
 }
