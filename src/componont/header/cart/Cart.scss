@@ -2,9 +2,7 @@
 .header-cart {
     display: flex;
     padding-right: 3rem;
-    justify-content: space-between;
-    position: relative;
-    right: 3rem;
+    margin-left: auto;
     .login {
         list-style: none;
         text-decoration: none;
@@ -160,3 +158,10 @@
         }
     }
 }
+
+// @media screen and (max-width:600px) {
+//     .header-cart{
+//         display: none;
+//     }
+    
+// }

@@ -3,9 +3,13 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.scss'
 import Cart from './cart/Cart';
+import { FaBars } from 'react-icons/fa'
+import { IconContext } from 'react-icons';
+
 const Header = () => {
     const [popupCart, setPopupCart] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isNavExpanded, setIsNavExpanded] = useState(false);
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -32,18 +36,15 @@ const Header = () => {
     return (
         <div className={navbarClasses.join(" ")}>
             <Link className='header-logo' to="/">ገበያ</Link>
-            {/* <ul className='header-list'>
-                <Link to="/">HOME</Link>
-                <a href="">AbOUT</a>
-                <a href="">CONTACT</a>
-            </ul> */}
-            <div className='header-cart'>
+            <IconContext.Provider value={{ size: 20 }}>
+                <FaBars onClick={() => setIsNavExpanded(!isNavExpanded)} className='fa-bar' />
+            </IconContext.Provider>
+            <div className={isNavExpanded ? 'header-cart expanded' : 'header-cart'}>
                 <FaSearch />
                 <span></span>
                 <Link className='login' to="/login">LOGIN</Link>
                 <span></span>
                 <Cart onToggle={onToggle} popupCart={popupCart} />
-
             </div>
         </div>
     )

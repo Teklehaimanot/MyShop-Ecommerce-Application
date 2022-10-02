@@ -2,14 +2,13 @@
 @import './../../main.scss';
 .header {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
     text-align: center;
     background-color: $color-primary;
     box-shadow: 0rem 0rem 0.5rem #888888;
     width: 100%;
-    height: 6rem;
-    overflow: auto;
+    padding: 2rem 0;
     position: relative;
     z-index: 2;
     .header-list {
@@ -57,6 +56,17 @@
             color: #fff;
         }
     }
+
+    .fa-bar{
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        transform: translateY(-50%);
+        display: none;  
+    }
+
 }
 
 .scrolled {
@@ -64,4 +74,30 @@
     top: 0;
     left: 0;
     background-color: #fff;
+}
+
+@media screen and (max-width:600px) {
+    .header{
+        flex-direction: column;
+        align-items: flex-start;
+
+    
+    .fa-bar{
+        display: block;
+        float: right;
+        margin: 0 3rem;
+       
+    }
+    .header-cart{
+        margin: 0 3rem;
+        margin-top: 5rem;
+        display: none;
+
+    }
+
+    .expanded{
+        display: block;
+    }
+}
+
 }
