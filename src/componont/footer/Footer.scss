@@ -11,9 +11,13 @@
         display: flex;
         justify-content: space-between;
         margin: 2% 5%;
+
+        h3{
+            margin-top: 1rem;
+        }
       
         .item-gebeya{
-            width: 30%;
+            width: 300px;
             p{
                 margin-top: 2rem;
                 color: #666;
@@ -62,6 +66,12 @@
                     }
                 }
             }     
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        .middle{
+            flex-wrap: wrap;
         }
     }
 }
