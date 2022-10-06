@@ -71,12 +71,12 @@ const Checkout = () => {
                                     <option value="4">Japan</option>
                                 </select>
                             </div>
-                            <div className='full-name'>
-                                <div className='form-group first-name'>
+                            <div className='form-name' >
+                                <div className='form-name-input'>
                                     <label>First Name <span>*</span></label>
                                     <input type='text' name='firstName' value={firstName} onChange={handleChange} />
                                 </div>
-                                <div className='form-group last-name'>
+                                <div className='form-name-input'>
                                     <label>Last Name <span>*</span></label>
                                     <input type='text' name='lastName' value={lastName} onChange={handleChange} />
                                 </div>
@@ -90,12 +90,12 @@ const Checkout = () => {
                                 <input type='text' name='city' value={city} onChange={handleChange} />
                             </div>
 
-                            <div className='full-name'>
-                                <div className='form-group first-name'>
+                            <div className='form-name' >
+                                <div className='form-name-input'>
                                     <label>Email <span >*</span></label>
                                     <input type='email' name='email' value={email} onChange={handleChange} />
                                 </div>
-                                <div className='form-group last-name'>
+                                <div className='form-name-input'>
                                     <label>Phone Number <span>*</span></label>
                                     <input type='text' name='phoneNumber' value={phoneNumber} onChange={handleChange} />
                                 </div>
