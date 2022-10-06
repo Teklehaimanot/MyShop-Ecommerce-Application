@@ -39,7 +39,6 @@ const CartView = () => {
         checked ? setShippingValue(0) : setShippingValue(shipping)
     }
     return (
-
         <div className='cart-area'>
             <div className='cart-table-list'>
                 <div className='cart-table-item'>
@@ -59,16 +58,14 @@ const CartView = () => {
                     ) : (<div className='cart-table-item' style={{ padding: '1rem 0' }}>Empty. </div>)
                 }
 
-                <div className='cart-table-item'>
-                    <div className='cart-table-item-bottom'>
-                        <Link to="/">CONTINUE SHOPING</Link>
-                        <label htmlFor="">
-                            <input type="checkbox" checked={checked} onChange={handleChecked} />
-                            <span>Shipping({shipping})</span>
-                        </label>
-                    </div>
+            </div>
 
-                </div>
+            <div className='cart-table-item-bottom'>
+                <Link to="/">CONTINUE SHOPING</Link>
+                <label htmlFor="">
+                    <input type="checkbox" checked={checked} onChange={handleChecked} />
+                    <span>Shipping({shipping})</span>
+                </label>
             </div>
 
             <div className='cart-total'>

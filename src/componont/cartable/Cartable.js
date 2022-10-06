@@ -32,7 +32,7 @@ const Cartable = ({ cart, addQuantity, minuQuantity, deleteItem }) => {
 
             </div>
             <div className='cart-table-col'>
-                <IconContext.Provider value={{ color: "red", size: '1.5rem', className: "global-class-name" }}>
+                <IconContext.Provider value={{ color: "red", size: 20, className: "global-class-name" }}>
                     <div className='total'>
                         <span>${cart.qunatity * cart.price}</span>
                         <RiDeleteBin6Line onClick={() => deleteItem(cart.id)}
