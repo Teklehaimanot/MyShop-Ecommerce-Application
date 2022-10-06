@@ -32,15 +32,17 @@ const Cartable = ({ cart, addQuantity, minuQuantity, deleteItem }) => {
 
             </div>
             <div className='cart-table-col'>
-                <IconContext.Provider value={{ color: "red", size: 20, className: "global-class-name" }}>
-                    <div className='total'>
-                        <span>${cart.qunatity * cart.price}</span>
+
+                <div className='total'>
+                    <span>${cart.qunatity * cart.price}</span>
+                    <IconContext.Provider value={{ color: "red", size: 15, className: "global-class-name" }}>
                         <RiDeleteBin6Line onClick={() => deleteItem(cart.id)}
                             onMouseOver={({ target }) => target.style.color = "blue"}
                             onMouseOut={({ target }) => target.style.color = "red"}
                         />
-                    </div>
-                </IconContext.Provider>
+                    </IconContext.Provider>
+                </div>
+
             </div>
         </div>
     )
