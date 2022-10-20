@@ -16,6 +16,7 @@ const Checkout = () => {
         email: '',
         phoneNumber: ''
     })
+    const [btnValue, setBtnValue] = useState(1)
 
     const Subtotal = () => {
         const total = carts.reduce((acc, curr) => {
@@ -28,20 +29,38 @@ const Checkout = () => {
         return shippingValue + Subtotal()
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const { country, firstName, lastName, address, city, email, phoneNumber } = billingForm
         if (Subtotal()) {
             if (country && firstName && lastName && address && city && email && phoneNumber) {
-                setShowPaymentCard(true)
+                if (btnValue === 1) {
+                    setShowPaymentCard(true)
+                } if (btnValue === 2) {
+                    await PayWithChapa()
+                }
+
             } else (
                 setError('Please fill out all required fields')
             )
         } else {
             setError('there is 0 item on your cart')
         }
+    }
 
-
+    const PayWithChapa = async () => {
+        const { country, firstName, lastName, address, city, email, phoneNumber } = billingForm
+        const result = await fetch('http://localhost:5000/api/pay', {
+            method: 'POST',
+            body: JSON.stringify({
+                amount: total,
+                email: email,
+                first_name: firstName,
+                last_name: lastName
+            })
+        })
+        const data = await result.json()
+        console.log(data)
     }
 
     const handleChange = (e) => {
@@ -133,7 +152,8 @@ const Checkout = () => {
                                 </tbody>
                             </table>
                             <hr />
-                            <input type='submit' value='PLACE ORDER' />
+                            <input onClick={() => setBtnValue(1)} type='submit' value='PLACE ORDER' />
+                            <input onClick={() => setBtnValue(2)} type='submit' value='PAY WITH LOCAL BANK' />
                             <span style={{ color: 'red', paddingTop: '3rem' }}>{error}</span>
                         </div>
                     </div>
