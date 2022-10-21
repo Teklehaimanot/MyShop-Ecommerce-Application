@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import StripeContainer from '../../componont/stripeContainer/StripeContainer'
 import { cartContext } from '../../context/CartProvider'
 import './Checkout.scss'
@@ -17,6 +18,7 @@ const Checkout = () => {
         phoneNumber: ''
     })
     const [btnValue, setBtnValue] = useState(1)
+    const history = useHistory();
 
     const Subtotal = () => {
         const total = carts.reduce((acc, curr) => {
@@ -49,18 +51,32 @@ const Checkout = () => {
     }
 
     const PayWithChapa = async () => {
+        const BASE_URL = process.env.REACT_APP_BASE_URL
+        const url = `${BASE_URL}/api/pay`
         const { country, firstName, lastName, address, city, email, phoneNumber } = billingForm
-        const result = await fetch('http://localhost:5000/api/pay', {
+
+        const result = await fetch(url, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify({
-                amount: total,
+                amount: total(),
                 email: email,
                 first_name: firstName,
-                last_name: lastName
+                last_name: lastName,
+                country: country,
+                address, address,
+                city: city,
+                phoneNumber: phoneNumber
             })
         })
         const data = await result.json()
-        console.log(data)
+        console.log(data.status)
+        if (data.status === "success") {
+            window.location.replace(data.data.checkout_url)
+        }
+
     }
 
     const handleChange = (e) => {
